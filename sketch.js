@@ -4,7 +4,7 @@
 * @param {number} depth
 */
 class Segment {
-  constructor(start, end, depth = 0) {
+  constructor (start, end, depth = 0) {
     this.a = start
     this.e = end
     let dist = p5.Vector.sub(end, start),
@@ -21,7 +21,7 @@ class Segment {
     this.depth = depth
   }
 
-  fillInnerSegments() {
+  fillInnerSegments () {
     this.innerSegments.push(
       new Segment(this.a, this.b1, this.depth - 1),
       new Segment(this.b1, this.c1, this.depth - 1),
@@ -68,10 +68,10 @@ let speedSlider
 let depthSlider
 
 function setup () {
-  createCanvas(windowWidth / 2, windowHeight/2)
+  createCanvas(windowWidth / 2, windowHeight / 2)
   stroke(0)
-  let offset = createVector(1, 0).mult(windowHeight/5).rotate(TAU/4)
-    centre = createVector(windowWidth / 4, windowHeight / 4)
+  let offset = createVector(1, 0).mult(windowHeight / 5).rotate(TAU / 4)
+  centre = createVector(windowWidth / 4, windowHeight / 4)
 
   for (let i = 0; i < 3; i++) {
     segments.push(
@@ -85,7 +85,6 @@ function setup () {
   createDiv('Depth')
   depthSlider = createSlider(0, Math.E, 1.5, 0.01)
   createA('https://github.com/stellartux/CC129', 'Source Code')
-
 }
 
 function draw () {
